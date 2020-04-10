@@ -1,23 +1,23 @@
+var button = document.getElementsByTagName('button')[0]
+
 var images = document.getElementsByTagName('img'); 
+  
+window.onload = updateEmoji()
 
-/*var requestJS = new XMLHttpRequest();
-var requestURL = 'emojis.json';
-requestJS.open('GET', requestURL);
-requestJS.responseType = 'json';
-requestJS.send();
-
-requestJS.onload = function() {
-    var count = 0;
-    for (var key in requestJS.response) {
-        count++;
-        data.innerHTML = requestJS.response['😓']
-
-    }
-    
+function updateEmoji() {
+    browser.tabs.executeScript({
+        file: "replace.js"
+    });
 }
-*/
-
-for (var i = 0, l = images.length; i < l; i++) {
-    var data_new = images[i].src.replace(/https:\/\/fonts.gstatic.com\/s\/e\/notoemoji\/latest\/1f497\/emoji.svg/gi, 'heyy')
-    images[i].src = 'hey'
+ 
+function handleUpdated() {
+    updateEmoji()
 }
+
+browser.tabs.onUpdated.addListener(handleUpdated);
+
+window.addEventListener('load', function () {
+    gBrowser.addEventListener('DOMContentLoaded', function () {
+        updateEmoji()
+    }, false);
+}, false);
