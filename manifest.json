@@ -1,7 +1,7 @@
 {
     "name": "EmojTea",
-    "version": "0.1",
-    "description": "EmojTea Chrome plugin",
+    "version": "1.0",
+    "description": "EmojTea Firefox plugin",
     "manifest_version": 2,
     "permissions": ["activeTab", "tabs"],
     "content_scripts": [{
@@ -10,5 +10,8 @@
     }],
     "browser_action": {
       "default_popup": "popup.html"
+    },
+    "icons": {
+      "512": "512.png"
     }
 }
