@@ -1,7 +1,7 @@
 {
     "name": "EmojTea",
-    "version": "1.0",
-    "description": "EmojTea Firefox plugin",
+    "version": "1.1",
+    "description": "EmojTea plugin",
     "manifest_version": 2,
     "permissions": ["activeTab", "tabs"],
     "content_scripts": [{

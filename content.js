@@ -8,6 +8,9 @@ function updateEmoji() {
     browser.tabs.executeScript({
         file: "replace.js"
     });
+    chrome.tabs.executeScript({
+        file: "replace.js"
+    });
 }
  
 function handleUpdated() {
@@ -15,6 +18,7 @@ function handleUpdated() {
 }
 
 browser.tabs.onUpdated.addListener(handleUpdated);
+chrome.tabs.onUpdated.addListener(handleUpdated);
 
 window.addEventListener('load', function () {
     gBrowser.addEventListener('DOMContentLoaded', function () {
